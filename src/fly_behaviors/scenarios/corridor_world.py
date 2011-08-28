@@ -1,14 +1,10 @@
 from contracts import contract
-from vehicles.interfaces import World
-from vehicles.worlds.utils import random_checkerboard
-from vehicles.interfaces.primitives import PolyLine
-from geometry.poses import SE2_from_xytheta, SE3_from_SE2
+from geometry import SE2_from_xytheta, SE3_from_SE2
+from vehicles import PolyLine, World, isodate, random_checkerboard
 import numpy as np
-from vehicles.interfaces.world import isodate
 
 class CorridorWorld(World):
     ''' A simple box. '''
-    
     
     @contract(width='>0', length='>0')
     def __init__(self, width=2, length=100,
