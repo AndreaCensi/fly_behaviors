@@ -4,9 +4,13 @@ from geometry import SE2, SE2_from_SE3
 from vehicles import VehicleSimulation, isodate
 import os
 import yaml
+import contracts
 
 
 def run_simulation(id_scenario, options, world, end_condition):
+    if options.fast:
+        contracts.disable_all()
+        
     vehicle = instance_vehicle_from_options(options)
     controller = instance_controller_from_options(options)
     

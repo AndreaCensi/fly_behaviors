@@ -22,6 +22,9 @@ def add_common_options(parser):
                       dest='id_controller', default='random_controller',
                       help="Controller ID [%default].")
 
+    parser.add_option("--fast", default=False, action='store_true',
+                      help="Disables contracts checking [%default].")
+
 def instance_vehicle_from_options(options):
     id_vehicle = options.id_vehicle    
     return instance_vehicle(id_vehicle)
