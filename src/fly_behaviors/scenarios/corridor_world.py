@@ -4,8 +4,7 @@ from vehicles import PolyLine, World, isodate, random_checkerboard
 import numpy as np
 
 class CorridorWorld(World):
-    ''' A simple box. '''
-    
+
     @contract(width='>0', length='>0')
     def __init__(self, width=2, length=100,
                  texture_L=None, texture_R=None):

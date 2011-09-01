@@ -38,8 +38,12 @@ setup(name='FlyBehaviors',
       tests_require=['nose'],
       entry_points={'console_scripts': [
            'fly_behaviors_corridor = fly_behaviors.scenarios.corridor:main',
+           'fly_behaviors_avoidance = fly_behaviors.scenarios.avoidance:main',
+           'fly_behaviors_servoing = fly_behaviors.scenarios.servoing:main',
            'fly_behaviors_chasing = fly_behaviors.scenarios.chasing:main',
-           'fly_behaviors_escaping = fly_behaviors.scenarios.escaping:main'
+           'fly_behaviors_escaping = fly_behaviors.scenarios.escaping:main',
+           'fly_behaviors_simulations = fly_behaviors.manager.main:main'
+
         ]},
 )
 

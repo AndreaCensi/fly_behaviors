@@ -13,7 +13,6 @@ class ChasingWorld(World):
     @contract(width='>0', length='>0')
     def __init__(self, width=100, length=100,
                  target_speed=0.1,
-#                 target_strategy=STRATEGY_RANDOM,
                  target_color=0,
                  target_radius=0.05,
                  target_start_distance=1,
@@ -25,7 +24,6 @@ class ChasingWorld(World):
         self.length = length
         self.target_dynamics = instance_dynamics(target_id_dynamics)
         self.target_speed = target_speed
-#        self.target_strategy = target_strategy
         self.target_radius = target_radius
         self.target_start_distance = target_start_distance
         

@@ -8,5 +8,11 @@ class Zero(Controller):
     def __init__(self, ncommands):
         self.ncommands = ncommands
         
-    def get_angular_velocity(self, directions, luminance):
+    def init(self, vehicle_spec):
+        pass
+    
+    def process_observations(self, observations):
+        pass
+    
+    def choose_commands(self):
         return np.zeros(self.ncommands)

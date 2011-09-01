@@ -11,9 +11,13 @@ def run_script(f):
     '''
     try:
         ret = f(sys.argv[1:])
-        logger.debug('Graceful exit with return code %d.' % ret)
         if ret is None:
             ret = 0
+        try:
+            ret = int(ret)
+        except:
+            logger.error('Cannot convert returned value %r to number.' % ret)
+            ret = -1
         sys.exit(ret)
     except Exception as e:
         logger.error(str(e))
