@@ -30,7 +30,7 @@ def manager(args):
     parser.add_option("--fast", default=False, action='store_true',
                       help="Disables contracts checking [%default].")
 
-    parser.add_option("--num_episodes", default=1,
+    parser.add_option("--num_episodes", default=1, type='int',
                       help="Number of episodes to run for each combination.")
 
     parser.add_option("--video", default=False, action='store_true',
