@@ -1,0 +1,27 @@
+- id: test_servoing
+  tasks: ['t_servoing_0']
+  vehicles: ['v_se2_k_cam360']
+  agents: ['c_zero_n3']
+  visualizations: [ 'fb_servoing']
+  
+- id: test_chasing
+  tasks: ['t_chasing_0']
+  vehicles: ['v_se2_k_fwd_cam360']
+  agents: ['c_zero_n1']
+  visualizations: [ 'fb_chasing']
+
+- id: test_escaping
+  tasks: ['t_escaping_0']
+  vehicles: ['v_se2_k_fwd_cam360']
+  agents: ['c_zero_n1']
+  visualizations: [ 'fb_escaping']
+  
+- id: test_corridor
+  tasks: ['t_corridor_0']
+  vehicles: ['v_se2_k_fwd_cam360']
+  agents: ['c_zero_n1']
+  visualizations: [ 'fb_corridor']
+  
+  
+
+# 'veh_yaml2movie',

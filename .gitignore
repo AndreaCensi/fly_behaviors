@@ -1,6 +1,5 @@
 *.pyc
 *.egg-info
-*.yaml
 last.avi*
 behaviors-sims
 *.pgc

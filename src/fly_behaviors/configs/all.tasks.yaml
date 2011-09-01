@@ -1,0 +1,37 @@
+- id: t_servoing_0
+  desc: A servoing task
+  code: 
+      - fly_behaviors.scenarios.Servoing
+      - failure_radius: 4
+        max_sim_time: 10
+        environment_scale: 0.5
+        environment_radius: 3
+                 
+- id: t_corridor_0
+  desc: A corridor-following task
+  code: 
+      - fly_behaviors.scenarios.CorridorFollowing
+      - corridor_width: 2
+        corridor_length: 100
+      
+- id: t_escaping_0
+  desc: An escaping task
+  code: 
+      - fly_behaviors.scenarios.Escaping
+      - world_radius: 100
+        world_texture_scale: 10
+        target_id_dynamics: 'd_SE2_fwd_v'
+        target_start_distance: 1
+        target_color: 0
+        target_radius: 0.05
+
+- id: t_chasing_0
+  desc: A chasing task
+  code: 
+      - fly_behaviors.scenarios.Chasing
+      - world_radius: 100
+        world_texture_scale: 10
+        target_id_dynamics: 'd_SE2_fwd_v'
+        target_start_distance: 1
+        target_color: 0
+        target_radius: 0.05

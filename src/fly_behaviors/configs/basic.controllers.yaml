@@ -1,0 +1,23 @@
+- id: c_random_n1
+  desc: "A random controller"
+  code:
+      - fly_behaviors.controllers.Random
+      - ncommands: 1
+      
+- id: c_zero_n1
+  desc: "A lazy controller always choosing 0."
+  code:
+      - fly_behaviors.controllers.Zero
+      - ncommands: 1
+      
+- id: c_random_n3
+  desc: "A random controller"
+  code:
+      - fly_behaviors.controllers.Random
+      - ncommands: 3
+      
+- id: c_zero_n3
+  desc: "A lazy controller always choosing 0."
+  code:
+      - fly_behaviors.controllers.Zero
+      - ncommands: 3
