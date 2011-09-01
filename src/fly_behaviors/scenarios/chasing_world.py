@@ -4,8 +4,7 @@ from geometry import (SE2, SE2_from_SE3, translation_angle_from_SE2,
 from vehicles import (instance_dynamics, random_checkerboard, box, Circle, World,
     isodate, constant_texture)
 import numpy as np
-
-#STRATEGY_RANDOM = 'random'
+ 
 
 class ChasingWorld(World):
     ''' A simple example of a dynamic world. '''

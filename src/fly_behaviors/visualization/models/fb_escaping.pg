@@ -1,0 +1,28 @@
+--- model fb_escaping
+""" Visualization of escaping task"""
+config file """ .yaml file"""
+config output 
+config height = 600 
+
+import procgraph_ros
+import procgraph_yaml
+ 
+
+|yaml_log_reader file=$file| --> state
+
+    state -> |fb_sidebar| -> right
+    state -> |extract_timeinfo| -> info
+
+    state -> |w:world_display| -> map_rgb
+    
+    w.width = $height
+    w.zoom = 2
+    w.show_sensor_data = 1
+    
+    map_rgb, right --> |sync| -> |grid cols=2 bgcolor=[0.5,0,0]| --> out
+
+    out --> |veh_image_label title="Simulation of escaping task"| --> |mencoder file=$output|
+
+	
+	
+	 

@@ -6,6 +6,7 @@ from vehicles import VehiclesConfig, load_vehicles_config
 import contracts
 import itertools
 import os
+
 def manager(args):
     configs_dir = resource_filename("fly_behaviors", "configs")
         

@@ -1,0 +1,38 @@
+--- model fb_servoing
+""" Visualization of servoing task"""
+config file """ .yaml file"""
+config output 
+
+config zoom=0
+config show_sensor_data = 0
+config skip=1
+
+config height = 600
+# config side_width = 300
+
+import procgraph_ros
+import procgraph_yaml
+
+# expl = "In the servoing task, the agent\nmust stabilize the initial image."
+
+
+|yaml_log_reader file=$file| --> |sieve n=$skip| --> state
+
+    
+    state -> |fb_sidebar| -> right
+    state -> |extract_timeinfo| -> info
+
+    state -> |w:world_display| -> map_rgb
+    
+    w.width = $height
+    w.zoom = $zoom
+    w.show_sensor_data = $show_sensor_data
+    
+    
+    map_rgb, right --> |sync| -> |grid cols=2 bgcolor=[0.5,0,0]| --> out
+
+    out --> |veh_image_label title="Simulation of servoing task"| --> |mencoder file=$output|
+
+	
+	
+	 

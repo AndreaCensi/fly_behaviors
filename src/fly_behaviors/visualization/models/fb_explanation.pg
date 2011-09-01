@@ -1,0 +1,16 @@
+--- model fb_explanation
+""" Puts a border and a label around an image """
+config text 
+output out "Image with border and label"
+config width = 300
+config height = 150
+
+|solid width=$width height=$height color=[0,1,0]| -> canvas
+canvas --> |text| --> |output name=out|
+ 
+size = 16
+font = 'Candara'
+color = white
+bg =  black
+
+text.texts = [{string:$text, valign: top, halign: left, font: $font, size: $size, color: $color, bg: $bg, position: [5,5]} ]

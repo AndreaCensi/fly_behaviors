@@ -1,7 +1,7 @@
 import os
 from setuptools import setup, find_packages
 
-version = "0.5"
+version = "1.0"
 
 description = """ """ 
 
@@ -11,8 +11,8 @@ def read(fname):
 long_description = read('README.rst')
     
 setup(name='FlyBehaviors',
-      author="CDS",
-      author_email="andrea@cds.caltech.edu",
+      author="",
+      author_email="",
       url='http://www.cds.caltech.edu/',
       
       description=description,
@@ -37,11 +37,6 @@ setup(name='FlyBehaviors',
       install_requires=[ ],
       tests_require=['nose'],
       entry_points={'console_scripts': [
-           'fly_behaviors_corridor = fly_behaviors.scenarios.corridor:main',
-           'fly_behaviors_avoidance = fly_behaviors.scenarios.avoidance:main',
-           'fly_behaviors_servoing = fly_behaviors.scenarios.servoing:main',
-           'fly_behaviors_chasing = fly_behaviors.scenarios.chasing:main',
-           'fly_behaviors_escaping = fly_behaviors.scenarios.escaping:main',
            'fly_behaviors_simulations = fly_behaviors.manager.main:main'
 
         ]},

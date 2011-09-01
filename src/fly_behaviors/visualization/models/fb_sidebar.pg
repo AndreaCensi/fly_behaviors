@@ -1,0 +1,24 @@
+--- model fb_sidebar
+config width = 300
+input state 
+output rgb
+
+|input name=state| -> state
+
+    state -> |extract_sensels| -> sensels
+    state -> |extract_commands| -> commands
+    
+    sensels -> |reshape2d height=1| --> |scale| --> |resize height=100 width=$width| --> |veh_image_label title="Luminance"| -> sensels_rgb
+    
+    sensels -> |plot title='' width=$width height=150 y_max=1 y_min=0| -> sensels_plot
+    
+    commands --> |historyt interval=1| -> |plot title='' width=$width height=150 y_max=1 y_min=-1|---> |veh_image_label title="Commands history"|  --> commands_plot
+    
+
+    # |fb_explanation text=$expl| --> explanation 
+    
+    sensels_rgb, sensels_plot, commands_plot --> |sync| --> |grid cols=1 bgcolor=[0.5,0,0]| --> |output name=rgb|
+
+	
+	
+	 

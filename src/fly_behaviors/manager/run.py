@@ -69,7 +69,7 @@ def run_simulation(task, vehicle, agent, log, dt, maxT):
         # TODO: check format
         if logfile is not None:
             y = simulation.to_yaml()
-            y['commands'] = commands
+            y['commands'] = commands.tolist()
             logfile.write('---\n')
             yaml.dump(y, logfile, Dumper=Dumper)
             
